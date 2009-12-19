@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv='Content-type' content='text/html; charset=utf-8' />
+    <link rel="stylesheet" href="style.css" type="text/css" media="all" />
+    <script type="text/javascript">
+      function goApidock() {
+        var query = "";
+        var destination = "";
+        var ruby = document.getElementById("ruby").value;
+        var rails = document.getElementById("rails").value;
+        var rspec = document.getElementById("rspec").value;
+
+        if (ruby != "") {
+          destination = "ruby";
+          query = ruby;
+        }
+        else if (rails != "") {
+          destination = "rails";
+          query = rails;
+        }
+        else if (rspec != "") {
+          destination = "rspec";
+          query = rspec;
+        }
+
+        if (destination != "")
+          chrome.tabs.create({url: "http://apidock.com/" + destination + "/" + query});
+      }
+    </script>
+  </head>
+  <body>
+    <div id="header">
+      <img src="apidock_128.png" />
+    </div>
+    <form>
+      <p>
+        <label for="ruby">Ruby</label>
+        <input type="text" id="ruby"></input>
+      </p>
+
+      <p>
+        <label for="rails">Rails</label>
+        <input type="text" id="rails"></input>
+      </p>
+
+      <p>
+        <label for="rspec">Rspec</label>
+        <input type="text" id="rspec"></input>
+      </p>
+
+      <p>
+        <input type="submit" value="Search" onclick="goApidock()"></input>
+      </p>
+    </form>
+  </body>
+</html>
