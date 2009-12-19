@@ -1,12 +1,12 @@
 {
   "name": "APIdock",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Unofficial extension to search Ruby, Rails and RSpec docs on apidock.com",
   "icons": {
-    "32": "apidock_32.png"
+    "128": "apidock.png"
   },
   "browser_action": {
-    "default_icon": "apidock_32.png",
+    "default_icon": "apidock.png",
     "popup": "popup.html"
   },
   "permissions": [
